@@ -5,7 +5,11 @@ import java.util.ArrayList;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.MappingIterator;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.csv.CsvMapper;
+import com.fasterxml.jackson.dataformat.csv.CsvParser;
+import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
 import br.pokemon.com.Pokemon;
@@ -14,6 +18,7 @@ public class Main {
 
 	public static ArrayList<Pokemon> pokemonLista = new ArrayList<Pokemon>();
 	public static ArrayList<Pokemon> pokemonListaXML = new ArrayList<Pokemon>();
+	public static ArrayList<Pokemon> pokemonListaCSV = new ArrayList<Pokemon>();
 
 	public static void extractJson() {
 		// JSON
@@ -88,32 +93,71 @@ public class Main {
 
 	}
 
+	public static void extractCsv()  {
+		try {
+
+			CsvMapper mapper = new CsvMapper();
+			mapper.enable(CsvParser.Feature.WRAP_AS_ARRAY);
+
+			CsvSchema schema = CsvSchema.emptySchema().withColumnSeparator(';').withHeader().withoutQuoteChar();
+			File csvFile = new File("./pokebase.csv");
+			MappingIterator<Pokemon> it = mapper.readerFor(Pokemon.class).with(schema).readValues(csvFile);
+			while (it.hasNext()) {
+				Pokemon csv = it.next();
+				Pokemon poke = new Pokemon();
+				poke.setNumero(csv.getNumero());
+				poke.setNome(csv.getNome());
+				poke.setDescricao(csv.getDescricao());
+				poke.setEvoluide(csv.getEvoluide());
+				poke.setAltura(csv.getAltura());
+				poke.setPeso(csv.getPeso());
+				poke.setSexo(csv.getSexo());
+				poke.setCategoria(csv.getCategoria());
+				poke.setHabilidade(csv.getHabilidade());
+				poke.setTipo(csv.getTipo());
+				poke.setFraqueza(csv.getFraqueza());
+				pokemonListaCSV.add(poke);
+
+			}
+
+		}  catch (JsonProcessingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 	public static void exibeDados(ArrayList<Pokemon> p) {
 		for (int i = 0; i < p.size(); i++) {
 			System.out.println("- Nome:       " + p.get(i).getNome());
 			System.out.println("- Descrição:  " + p.get(i).getDescricao());
 			System.out.println("- Categoria:  " + p.get(i).getCategoria());
+			System.out.println("- Evolui de:  "+p.get(i).getEvoluide());
 			System.out.println("- Habilidade: ");
 			for (int j = 0; j < p.get(i).getHabilidade().size(); j++) {
-				System.out.println("  "+p.get(i).getHabilidade().get(j).trim());
+				System.out.println("  " + p.get(i).getHabilidade().get(j).trim());
 			}
 			System.out.println("- Tipo:       ");
 			for (int j = 0; j < p.get(i).getTipo().size(); j++) {
-				System.out.println("  "+p.get(i).getTipo().get(j).trim());
+				System.out.println("  " + p.get(i).getTipo().get(j).trim());
 			}
 			System.out.println("- Fraqueza:   ");
 			for (int j = 0; j < p.get(i).getFraqueza().size(); j++) {
-				System.out.println("  "+p.get(i).getFraqueza().get(j).trim());
+				System.out.println("  " + p.get(i).getFraqueza().get(j).trim());
 			}
-			System.out.println("--------------------------------------------------------------------------------------------------------------------------------------");
+			System.out.println(
+					"--------------------------------------------------------------------------------------------------------------------------------------");
 		}
 	}
 
 	public static void main(String[] args) {
 
-	//	extractXML();
-		extractJson();
-		exibeDados(pokemonLista);
+		// extractXML();
+		//extractJson();
+		extractCsv();
+		exibeDados(pokemonListaCSV);
 	}
 
 }

@@ -6,6 +6,7 @@ public class Pokemon {
 	String numero;
 	String nome;
 	String descricao;
+	String evoluide;
 	String altura;
 	String peso;
 	String sexo;
@@ -72,6 +73,12 @@ public class Pokemon {
 	}
 	public void setFraqueza(ArrayList<String> fraqueza) {
 		this.fraqueza = fraqueza;
+	}
+	public String getEvoluide() {
+		return evoluide;
+	}
+	public void setEvoluide(String evoluide) {
+		this.evoluide = evoluide;
 	}
 	
 
