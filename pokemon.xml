@@ -1,0 +1,646 @@
+<ArrayList xmlns="">    
+    <item>
+        <numero>110</numero>
+        <nome>Weezing</nome>
+        <descricao>Weezing loves the gases given off by rotted kitchen garbage. This Pokémon will find a dirty, unkempt house and make it its home. At night, when the people in the house are asleep, it will go through the trash.</descricao>
+        <altura>1,2 m</altura>
+        <peso>9,5 kg</peso>
+        <sexo>Ambos</sexo>
+        <categoria>Poison Gas</categoria>
+        <habilidade>
+            <habilidade>Levitate</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Poison </tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Psychic</fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>111</numero>
+        <nome>Rhyhorn </nome>
+        <descricao>Rhyhorn runs in a straight line, smashing everything in its path. It is not bothered even if it rushes headlong into a block of steel. This Pokémon may feel some pain from the collision the next day, however.</descricao>
+        <altura>1,0 m</altura>
+        <peso>115,0 kg</peso>
+        <sexo>Ambos</sexo>
+        <categoria>Spikes</categoria>
+        <habilidade>
+            <habilidade>Rock Head</habilidade>
+            <habilidade> Lightning Rod</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Ground</tipo>
+            <tipo> Rock</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Grass</fraqueza>
+            <fraqueza> Water</fraqueza>
+            <fraqueza> Fighting</fraqueza>
+            <fraqueza> Ground</fraqueza>
+            <fraqueza> Ice</fraqueza>
+            <fraqueza> Steel</fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>112</numero>
+        <nome>Rhydon</nome>
+        <descricao>Rhydon's horn can crush even uncut diamonds. One sweeping blow of its tail can topple a building. This Pokémon's hide is extremely tough. Even direct cannon hits don't leave a scratch.</descricao>
+        <altura>1,9 m</altura>
+        <peso>120,0 kg</peso>
+        <sexo>Ambos</sexo>
+        <categoria>Drill</categoria>
+        <habilidade>
+            <habilidade>Rock Head</habilidade>
+            <habilidade> Lightning Rod</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Ground</tipo>
+            <tipo> Rock</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Grass</fraqueza>
+            <fraqueza> Water</fraqueza>
+            <fraqueza> Fighting</fraqueza>
+            <fraqueza> Ground</fraqueza>
+            <fraqueza> Ice</fraqueza>
+            <fraqueza> Steel</fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>113</numero>
+        <nome>Chansey </nome>
+        <descricao>Chansey lays nutritionally excellent eggs on an everyday basis. The eggs are so delicious, they are easily and eagerly devoured by even those people who have lost their appetite.</descricao>
+        <altura>1,1 m</altura>
+        <peso>34,6 kg</peso>
+        <sexo>Femea</sexo>
+        <categoria>Egg</categoria>
+        <habilidade>
+            <habilidade>Natural Cure</habilidade>
+            <habilidade> Serene Grace</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Normal</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Fighting</fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>114</numero>
+        <nome>Tangela </nome>
+        <descricao>Tangela's vines snap off easily if they are grabbed. This happens without pain, allowing it to make a quick getaway. The lost vines are replaced by newly grown vines the very next day.</descricao>
+        <altura>1,0 m</altura>
+        <peso>35,0 kg</peso>
+        <sexo>Ambos</sexo>
+        <categoria>Vine</categoria>
+        <habilidade>
+            <habilidade>Clorophyll</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Grass</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Bug</fraqueza>
+            <fraqueza> Fire</fraqueza>
+            <fraqueza> Flying</fraqueza>
+            <fraqueza> Ice</fraqueza>
+            <fraqueza> Poison</fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>115</numero>
+        <nome>Kangaskhan</nome>
+        <descricao>If you come across a young Kangaskhan playing by itself, you must never disturb it or attempt to catch it. The baby Pokémon's parent is sure to be in the area, and it will become violently enraged at you.</descricao>
+        <altura>2,2 m</altura>
+        <peso>80 kg</peso>
+        <sexo>Ambos</sexo>
+        <categoria>Parent</categoria>
+        <habilidade>
+            <habilidade>Early Bird</habilidade>
+            <habilidade> Scrappy</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Normal</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Fighting</fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>116</numero>
+        <nome>Horsea </nome>
+        <descricao>Horsea eats small insects and moss off of rocks. If the ocean current turns fast, this Pokémon anchors itself by wrapping its tail around rocks or coral to prevent being washed away</descricao>
+        <altura>0,4 m</altura>
+        <peso>8,0 kg</peso>
+        <sexo>Ambos</sexo>
+        <categoria>Dragon</categoria>
+        <habilidade>
+            <habilidade>Swift swim</habilidade>
+            <habilidade> Sniper</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Water</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Electric</fraqueza>
+            <fraqueza> Grass</fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>117</numero>
+        <nome>Seadra </nome>
+        <descricao>Seadra sleeps after wriggling itself between the branches of coral. Those trying to harvest coral are occasionally stung by this Pokémon's poison barbs if they fail to notice it.</descricao>
+        <altura>1,2 m</altura>
+        <peso>25 kg</peso>
+        <sexo>Ambos</sexo>
+        <categoria>Dragon</categoria>
+        <habilidade>
+            <habilidade>Poison point</habilidade>
+            <habilidade> sniper</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Water</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Electric</fraqueza>
+            <fraqueza> Grass</fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>118</numero>
+        <nome>Goldeen</nome>
+        <descricao>Goldeen is a very beautiful Pokémon with fins that billow elegantly in water. However, don't let your guard down around this Pokémon—it could ram you powerfully with its horn.</descricao>
+        <altura>0,6 m</altura>
+        <peso>15 kg</peso>
+        <sexo>Ambos</sexo>
+        <categoria>Goldfish</categoria>
+        <habilidade>
+            <habilidade>Swift swim</habilidade>
+            <habilidade> Water veil</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Water</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Electric</fraqueza>
+            <fraqueza> Grass</fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>119</numero>
+        <nome>Seaking </nome>
+        <descricao>In the autumn, Seaking males can be seen performing courtship dances in riverbeds to woo females. During this season, this Pokémon's body coloration is at its most beautiful.</descricao>
+        <altura>1.3 m</altura>
+        <peso>39 kg</peso>
+        <sexo>Ambos</sexo>
+        <categoria>Goldfish</categoria>
+        <habilidade>
+            <habilidade>Swift swim</habilidade>
+            <habilidade> Water veil</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Water</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Electric</fraqueza>
+            <fraqueza> Grass</fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>120</numero>
+        <nome>Staryu</nome>
+        <descricao>Staryu's center section has an organ called the core that shines bright red. If you go to a beach toward the end of summer, the glowing cores of these Pokémon look like the stars in the sky.</descricao>
+        <altura>0,8 m</altura>
+        <peso>34,5 kg</peso>
+        <sexo>Ambos</sexo>
+        <categoria>Star Shape</categoria>
+        <habilidade>
+            <habilidade>Nature Cure</habilidade>
+            <habilidade> Iluminate</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Water</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Electric</fraqueza>
+            <fraqueza> Grass</fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>121</numero>
+        <nome>Starmie</nome>
+        <descricao>Starmie's center section—the core—glows brightly in seven colors. Because of its luminous nature, this Pokémon has been given the nickname “the gem of the sea."</descricao>
+        <altura>1,1 m</altura>
+        <peso>80,0 kg</peso>
+        <sexo>Ambos</sexo>
+        <categoria>Mysterious</categoria>
+        <habilidade>
+            <habilidade>Nature Cure</habilidade>
+            <habilidade> Iluminate</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Water</tipo>
+            <tipo> Psychic</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Bug</fraqueza>
+            <fraqueza> Dark</fraqueza>
+            <fraqueza> Eletric</fraqueza>
+            <fraqueza> Ghost</fraqueza>
+            <fraqueza> Grass</fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>122</numero>
+        <nome>Mr. Mime</nome>
+        <descricao>Mr. Mime is a master of pantomime. Its gestures and motions convince watchers that something unseeable actually exists. Once the watchers are convinced, the unseeable thing exists as if it were real.</descricao>
+        <altura>1,3 m</altura>
+        <peso>54,5 kg</peso>
+        <sexo>Ambos</sexo>
+        <categoria>Barrier</categoria>
+        <habilidade>
+            <habilidade>Soundproof</habilidade>
+            <habilidade> Filter</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Psychic</tipo>
+            <tipo> Fairy</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Ghost</fraqueza>
+            <fraqueza> Steel</fraqueza>
+            <fraqueza> Poison</fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>123</numero>
+        <nome>Scyther</nome>
+        <descricao>Scyther is blindingly fast. Its blazing speed enhances the effectiveness of the twin scythes on its forearms. This Pokémon's scythes are so effective, they can slice through thick logs in one wicked stroke.</descricao>
+        <altura>1,5 m</altura>
+        <peso>56,0 kg</peso>
+        <sexo>Ambos</sexo>
+        <categoria>Mantis</categoria>
+        <habilidade>
+            <habilidade>Swarm</habilidade>
+            <habilidade> Technician</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Bug</tipo>
+            <tipo> Flying</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Rock</fraqueza>
+            <fraqueza> Electric</fraqueza>
+            <fraqueza> Fire</fraqueza>
+            <fraqueza> Flying</fraqueza>
+            <fraqueza> Ice</fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>124</numero>
+        <nome>Jynx</nome>
+        <descricao>Jynx walks rhythmically, swaying and shaking its hips as if it were dancing. Its motions are so bouncingly alluring, people seeing it are compelled to shake their hips without giving any thought to what they are doing.</descricao>
+        <altura>1,4 m</altura>
+        <peso>40,6 kg</peso>
+        <sexo>Femea</sexo>
+        <categoria>Human Shape</categoria>
+        <habilidade>
+            <habilidade>Oblivious</habilidade>
+            <habilidade> Forewarn</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Ice</tipo>
+            <tipo> Psychic</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Bug</fraqueza>
+            <fraqueza> Dark</fraqueza>
+            <fraqueza> Fire</fraqueza>
+            <fraqueza> Ghost</fraqueza>
+            <fraqueza> Rock</fraqueza>
+            <fraqueza> Steel</fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>125</numero>
+        <nome>Electabuzz</nome>
+        <descricao>When a storm arrives, gangs of this Pokémon compete with each other to scale heights that are likely to be stricken by lightning bolts. Some towns use Electabuzz in place of lightning rods.</descricao>
+        <altura>1,1 m</altura>
+        <peso>30,0 kg</peso>
+        <sexo>Ambos</sexo>
+        <categoria>Electric</categoria>
+        <habilidade>
+            <habilidade>Static</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Electric</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Ground</fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>126</numero>
+        <nome>Magmar</nome>
+        <descricao>In battle, Magmar blows out intensely hot flames from all over its body to intimidate its opponent. This Pokémon's fiery bursts create heat waves that ignite grass and trees in its surroundings.</descricao>
+        <altura>1,3 m</altura>
+        <peso>44,5 kg</peso>
+        <sexo>Ambos</sexo>
+        <categoria>Spitfire</categoria>
+        <habilidade>
+            <habilidade>Flame Body</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Fire</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Ground</fraqueza>
+            <fraqueza> Rock</fraqueza>
+            <fraqueza> Water</fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>127</numero>
+        <nome>Pinsir</nome>
+        <descricao>Pinsir is astoundingly strong. It can grip a foe weighing twice its weight in its horns and easily lift it. This Pokémon's movements turn sluggish in cold places.</descricao>
+        <altura>1,5 m</altura>
+        <peso>55,0 kg</peso>
+        <sexo>Ambos</sexo>
+        <categoria>Stag Beetle</categoria>
+        <habilidade>
+            <habilidade>Hyper Cutter</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Bug</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Fire</fraqueza>
+            <fraqueza> Flying</fraqueza>
+            <fraqueza> Rock</fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>128</numero>
+        <nome>Tauros</nome>
+        <descricao>This Pokémon is not satisfied unless it is rampaging at all times. If there is no opponent for Tauros to battle, it will charge at thick trees and knock them down to calm itself.</descricao>
+        <altura>1,4 m</altura>
+        <peso>88,4 kg</peso>
+        <sexo>Masculino</sexo>
+        <categoria>Wild Bull</categoria>
+        <habilidade>
+            <habilidade>Intimidate</habilidade>
+            <habilidade> Anger Point</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Normal</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Fighting</fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>129</numero>
+        <nome>Magikarp</nome>
+        <descricao>Magikarp is a pathetic excuse for a Pokémon that is only capable of flopping and splashing. This behavior prompted scientists to undertake research into it.</descricao>
+        <altura>0,9 m</altura>
+        <peso>10,0 kg</peso>
+        <sexo>Ambos</sexo>
+        <categoria>Fish</categoria>
+        <habilidade>
+            <habilidade>Swift Swim</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Water</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Grass</fraqueza>
+            <fraqueza> Electric</fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>130</numero>
+        <nome>Gyarados</nome>
+        <descricao>When Magikarp evolves into Gyarados, its brain cells undergo a structural transformation. It is said that this transformation is to blame for this Pokémon's wildly violent nature.</descricao>
+        <altura>6,5 m</altura>
+        <peso>235,0 kg</peso>
+        <sexo>Ambos</sexo>
+        <categoria>Atrocius</categoria>
+        <habilidade>
+            <habilidade>Intimidate</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Water</tipo>
+            <tipo> Flying</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Electric</fraqueza>
+            <fraqueza> Rock</fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>131</numero>
+        <nome>Lapras</nome>
+        <descricao>People have driven Lapras almost to the point of extinction. In the evenings, this Pokémon is said to sing plaintively as it seeks what few others of its kind still remain.</descricao>
+        <altura>2,5 m</altura>
+        <peso>220,0 kg</peso>
+        <sexo>Ambos</sexo>
+        <categoria>Transport</categoria>
+        <habilidade>
+            <habilidade>Water absorb</habilidade>
+            <habilidade> shell armor</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Water</tipo>
+            <tipo> Ice</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Electric</fraqueza>
+            <fraqueza> Rock</fraqueza>
+            <fraqueza> Grass</fraqueza>
+            <fraqueza> Fighting </fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>132</numero>
+        <nome>Ditto</nome>
+        <descricao>Ditto rearranges its cell structure to transform itself into other shapes. However, if it tries to transform itself into something by relying on its memory, this Pokémon manages to get details wrong.</descricao>
+        <altura>0,3 m</altura>
+        <peso>4,0 kg</peso>
+        <sexo>Desconhecido</sexo>
+        <categoria>Transform</categoria>
+        <habilidade>
+            <habilidade>Limber</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Normal</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Fighting</fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>133</numero>
+        <nome>Eeve</nome>
+        <descricao>Eevee has an unstable genetic makeup that suddenly mutates due to the environment in which it lives. Radiation from various stones causes this Pokémon to evolve.</descricao>
+        <altura>0,3 m</altura>
+        <peso>6,5kg</peso>
+        <sexo>Ambos</sexo>
+        <categoria>Evolution</categoria>
+        <habilidade>
+            <habilidade>Run away</habilidade>
+            <habilidade> Adaptability</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Normal</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Fighting</fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>134</numero>
+        <nome>Vaporeon</nome>
+        <descricao>Vaporeon underwent a spontaneous mutation and grew fins and gills that allow it to live underwater. This Pokémon has the ability to freely control water.</descricao>
+        <altura>1,0 m</altura>
+        <peso>29,0 kg</peso>
+        <sexo>Ambos</sexo>
+        <categoria>Bubble Jet</categoria>
+        <habilidade>
+            <habilidade>Water absorb</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Water</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Electric</fraqueza>
+            <fraqueza> Grass</fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>135</numero>
+        <nome>Jolteon </nome>
+        <descricao>Jolteon's cells generate a low level of electricity. This power is amplified by the static electricity of its fur, enabling the Pokémon to drop thunderbolts. The bristling fur is made of electrically charged needles.</descricao>
+        <altura>0,8 m</altura>
+        <peso>24,5 kg</peso>
+        <sexo>Ambos</sexo>
+        <categoria>Lightning</categoria>
+        <habilidade>
+            <habilidade>Volt Absorb</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Electric</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Ground</fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>136</numero>
+        <nome>Flareon </nome>
+        <descricao>Flareon's fluffy fur has a functional purpose—it releases heat into the air so that its body does not get excessively hot. This Pokémon's body temperature can rise to a maximum of 1,650 degrees Fahrenheit.</descricao>
+        <altura>0,9 m</altura>
+        <peso>25,0 kg</peso>
+        <sexo>Ambos</sexo>
+        <categoria>Flame</categoria>
+        <habilidade>
+            <habilidade>Flash Fire</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Fire</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Ground</fraqueza>
+            <fraqueza> Rock</fraqueza>
+            <fraqueza> Water</fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>137</numero>
+        <nome>Porygon </nome>
+        <descricao>Porygon is capable of reverting itself entirely back to program data and entering cyberspace. This Pokémon is copy protected so it cannot be duplicated by copying.</descricao>
+        <altura>0,8 m</altura>
+        <peso>36,5 kg</peso>
+        <sexo>Desconhecido</sexo>
+        <categoria>Virtual</categoria>
+        <habilidade>
+            <habilidade>Trace</habilidade>
+            <habilidade> Download</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Normal</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Fighting</fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>138</numero>
+        <nome>Omanyte</nome>
+        <descricao>Omanyte is one of the ancient and long-since-extinct Pokémon that have been regenerated from fossils by people. If attacked by an enemy, it withdraws itself inside its hard shell.</descricao>
+        <altura>0,4 m</altura>
+        <peso>7,5 kg</peso>
+        <sexo>Ambos</sexo>
+        <categoria>Spiral</categoria>
+        <habilidade>
+            <habilidade>Shell Armor</habilidade>
+            <habilidade> Swift Swin</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Rock</tipo>
+            <tipo> Water</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Grass</fraqueza>
+            <fraqueza> Electric</fraqueza>
+            <fraqueza> Fighting</fraqueza>
+            <fraqueza> Ground</fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>139</numero>
+        <nome>Omastar</nome>
+        <descricao>Omastar uses its tentacles to capture its prey. It is believed to have become extinct because its shell grew too large and heavy, causing its movements to become too slow and ponderous.</descricao>
+        <altura>1,0 m</altura>
+        <peso>35,0 kg</peso>
+        <sexo>Ambos</sexo>
+        <categoria>Spiral</categoria>
+        <habilidade>
+            <habilidade>Shell Armor</habilidade>
+            <habilidade> Swift Swin</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Rock</tipo>
+            <tipo> Water</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Grass</fraqueza>
+            <fraqueza> Electric</fraqueza>
+            <fraqueza> Fighting</fraqueza>
+            <fraqueza> Ground</fraqueza>
+        </fraqueza>
+    </item>
+    <item>
+        <numero>140</numero>
+        <nome>Kabuto </nome>
+        <descricao>Kabuto is a Pokémon that has been regenerated from a fossil. However, in extremely rare cases, living examples have been discovered. The Pokémon has not changed at all for 300 million years.</descricao>
+        <altura>0,5 m</altura>
+        <peso>11,5 kg</peso>
+        <sexo>Ambos</sexo>
+        <categoria>Shellfish</categoria>
+        <habilidade>
+            <habilidade>Swift Swim</habilidade>
+            <habilidade> Battle Armor</habilidade>
+        </habilidade>
+        <tipo>
+            <tipo>Rock</tipo>
+            <tipo> Water</tipo>
+        </tipo>
+        <fraqueza>
+            <fraqueza>Grass</fraqueza>
+            <fraqueza> Electric</fraqueza>
+            <fraqueza> Fighting</fraqueza>
+            <fraqueza> Ground</fraqueza>
+        </fraqueza>
+    </item>   
+</ArrayList>
