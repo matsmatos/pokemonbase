@@ -12,8 +12,12 @@ public class Pokemon {
 	String sexo;
 	String categoria;
 	ArrayList<String> habilidade = new ArrayList<String>();
+	String codhabilidade;
+	String codtipo;
 	ArrayList<String> tipo = new ArrayList<>();
 	ArrayList<String> fraqueza = new ArrayList<>();
+		
+	
 	public String getNumero() {
 		return numero;
 	}
