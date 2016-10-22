@@ -186,7 +186,7 @@ public class Main {
 			
 			
 			
-//---//
+//--  -//
 			Pokemon pok = new Pokemon();
 			pok.setNumero(rs.getString(1));
 			pok.setNome(rs.getString(2));
