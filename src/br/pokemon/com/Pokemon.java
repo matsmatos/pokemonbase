@@ -11,12 +11,48 @@ public class Pokemon {
 	String peso;
 	String sexo;
 	String categoria;
-	ArrayList<String> habilidade = new ArrayList<String>();
+	String[] habilidade;
 	String codhabilidade;
 	String codtipo;
-	ArrayList<String> tipo = new ArrayList<>();
-	ArrayList<String> fraqueza = new ArrayList<>();
-		
+	String[] fraqueza;
+	String[] tipo;
+	ArrayList<String> arrayTipo = new ArrayList<>();
+	ArrayList<String> arrayFraqueza = new ArrayList<>();
+	ArrayList<String> arrayHab = new ArrayList<>();
+ 
+	
+	public String getCodhabilidade() {
+		return codhabilidade;
+	}
+	public void setCodhabilidade(String codhabilidade) {
+		this.codhabilidade = codhabilidade;
+	}
+	public String getCodtipo() {
+		return codtipo;
+	}
+	public void setCodtipo(String codtipo) {
+		this.codtipo = codtipo;
+	}
+	public ArrayList<String> getArrayTipo() {
+		return arrayTipo;
+	}
+	public void setArrayTipo(ArrayList<String> arrayTipo) {
+		this.arrayTipo = arrayTipo;
+	}
+	public ArrayList<String> getArrayFraqueza() {
+		return arrayFraqueza;
+	}
+	public void setArrayFraqueza(ArrayList<String> arrayFraqueza) {
+		this.arrayFraqueza = arrayFraqueza;
+	}
+	public ArrayList<String> getArrayHab() {
+		return arrayHab;
+	}
+	public void setArrayHab(ArrayList<String> arrayHab) {
+		this.arrayHab = arrayHab;
+	}
+
+	
 	
 	public String getNumero() {
 		return numero;
@@ -60,22 +96,22 @@ public class Pokemon {
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
-	public ArrayList<String> getHabilidade() {
+	public String[] getHabilidade() {
 		return habilidade;
 	}
-	public void setHabilidade(ArrayList<String> habilidade) {
+	public void setHabilidade(String[] habilidade) {
 		this.habilidade = habilidade;
 	}
-	public ArrayList<String> getTipo() {
+	public String[] getTipo() {
 		return tipo;
 	}
-	public void setTipo(ArrayList<String> tipo) {
+	public void setTipo(String[] tipo) {
 		this.tipo = tipo;
 	}
-	public ArrayList<String> getFraqueza() {
+	public String[] getFraqueza() {
 		return fraqueza;
 	}
-	public void setFraqueza(ArrayList<String> fraqueza) {
+	public void setFraqueza(String[] fraqueza) {
 		this.fraqueza = fraqueza;
 	}
 	public String getEvoluide() {

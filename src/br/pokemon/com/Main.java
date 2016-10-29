@@ -8,9 +8,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-//import Principal.Pokemon_Principal;
-
-
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -21,12 +18,24 @@ import com.fasterxml.jackson.dataformat.csv.CsvParser;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
+import java.util.HashMap;
+//import Principal.Pokemon_Principal;
+import java.util.Map;
+import java.util.Set;
+
 public class Main {
 
 	public static ArrayList<Pokemon> pokemonLista = new ArrayList<Pokemon>();
 	public static ArrayList<Pokemon> pokemonListaXML = new ArrayList<Pokemon>();
 	public static ArrayList<Pokemon> pokemonListaCSV = new ArrayList<Pokemon>();
 	public static ArrayList<Pokemon> pokemonListaSQL = new ArrayList<Pokemon>();
+	public static HashMap<String, String> mapTipo = new HashMap();
+	public static HashMap<String, String> mapFraqueza = new HashMap();
+	public static HashMap<String, String> mapTipoPokemon = new HashMap();
+	public static HashMap<String, String> mapHabilidadePokemon = new HashMap();
+	public static HashMap<String, String> mapHabilidade = new HashMap();
+	public static HashMap<String, String> mapCategoria = new HashMap();
+	public static HashMap<String, String> mapSexo = new HashMap();
 
 	public static Connection getConnPokeBase() throws Exception {
 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -35,6 +44,44 @@ public class Main {
 						+ "user=aluno;" + "password=aluno;"
 						+ "database=pokebase");
 		return conn;
+
+	}
+
+	public static Connection getConnPokedexInsert() throws Exception {
+		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+		Connection conn = DriverManager
+				.getConnection("jdbc:sqlserver://10.135.0.53\\sqledutsi;"
+						+ "user=aluno;" + "password=aluno;"
+						+ "database=pokedex");
+		return conn;
+
+	}
+
+	public static void extractHabDesc(String[] column,String str,
+			HashMap<String, String> mapAtribu) {
+
+		for (int i = 0; i < column.length; i++) {
+			//
+
+			String valor = column[i].trim();
+			if (mapAtribu.get(column[i]) != valor)
+				mapAtribu.put(column[i].trim(), column[i].trim());
+			mapAtribu.put(column[i].trim(), column[i].trim());
+
+		}
+
+	}
+	public static void extractColumn(String[] column,
+			HashMap<String, String> mapAtribu) {
+
+		for (int i = 0; i < column.length; i++) {
+			//
+
+			String valor = column[i].trim();
+			if (mapAtribu.get(column[i]) != valor)
+				mapAtribu.put(column[i].trim(), column[i].trim());
+
+		}
 
 	}
 
@@ -61,6 +108,13 @@ public class Main {
 				poke.setHabilidade(pokemon.getHabilidade());
 				poke.setTipo(pokemon.getTipo());
 				poke.setFraqueza(pokemon.getFraqueza());
+
+				extractColumn(poke.getTipo(), mapTipo);
+				extractColumn(poke.getFraqueza(), mapFraqueza);
+				extractColumn(poke.getTipo(), mapTipoPokemon);
+				extractColumn(poke.getHabilidade(), mapHabilidade);
+				// extractColumn(poke.getCategoria(), mapCategoria);
+
 				pokemonLista.add(poke);
 			}
 		} catch (
@@ -100,6 +154,11 @@ public class Main {
 				poke.setHabilidade(pokemon.getHabilidade());
 				poke.setTipo(pokemon.getTipo());
 				poke.setFraqueza(pokemon.getFraqueza());
+
+				extractColumn(poke.getTipo(), mapTipo);
+				extractColumn(poke.getFraqueza(), mapFraqueza);
+				extractColumn(poke.getTipo(), mapTipoPokemon);
+				extractColumn(poke.getHabilidade(), mapHabilidade);
 				pokemonListaXML.add(poke);
 
 			}
@@ -138,6 +197,11 @@ public class Main {
 				poke.setHabilidade(csv.getHabilidade());
 				poke.setTipo(csv.getTipo());
 				poke.setFraqueza(csv.getFraqueza());
+
+				extractColumn(poke.getTipo(), mapTipo);
+				extractColumn(poke.getFraqueza(), mapFraqueza);
+				extractColumn(poke.getTipo(), mapTipoPokemon);
+				extractColumn(poke.getHabilidade(), mapHabilidade);
 				pokemonListaCSV.add(poke);
 
 			}
@@ -157,18 +221,26 @@ public class Main {
 			System.out.println("- Descrição:  " + p.get(i).getDescricao());
 			System.out.println("- Categoria:  " + p.get(i).getCategoria());
 			System.out.println("- Evolui de:  " + p.get(i).getEvoluide());
+			System.out.println("- altura:  " + p.get(i).getAltura());
+			System.out.println("- Peso:  " + p.get(i).getPeso());
+
 			System.out.println("- Habilidade: ");
-			for (int j = 0; j < p.get(i).getHabilidade().size(); j++) {
-				System.out.println("  "
-						+ p.get(i).getHabilidade().get(j).trim());
+			// for (int j = 0; j < p.get(i).getHabilidade().size(); j++) {
+			// System.out.println("  "
+			// + p.get(i).getHabilidade().get(j).trim());
+			// }
+
+			for (int j = 0; j < p.get(i).getHabilidade().length; j++) {
+
+				System.out.println(p.get(i).getHabilidade()[j].trim());
 			}
 			System.out.println("- Tipo:       ");
-			for (int j = 0; j < p.get(i).getTipo().size(); j++) {
-				System.out.println("  " + p.get(i).getTipo().get(j).trim());
+			for (int j = 0; j < p.get(i).getTipo().length; j++) {
+				System.out.println("  " + p.get(i).getTipo()[j].trim());
 			}
 			System.out.println("- Fraqueza:   ");
-			for (int j = 0; j < p.get(i).getFraqueza().size(); j++) {
-				System.out.println("  " + p.get(i).getFraqueza().get(j).trim());
+			for (int j = 0; j < p.get(i).getFraqueza().length; j++) {
+				System.out.println("  " + p.get(i).getFraqueza()[j].trim());
 			}
 			System.out
 					.println("--------------------------------------------------------------------------------------------------------------------------------------");
@@ -183,10 +255,8 @@ public class Main {
 		ResultSet rs = ps.executeQuery();
 
 		while (rs.next()) {
-			
-			
-			
-//--  -//
+
+			// -- -//
 			Pokemon pok = new Pokemon();
 			pok.setNumero(rs.getString(1));
 			pok.setNome(rs.getString(2));
@@ -194,62 +264,113 @@ public class Main {
 			pok.setAltura(rs.getString(4));
 			pok.setCategoria(rs.getString(5));
 			pok.setPeso(rs.getString(6));
-
 			String habilidades = rs.getString(7);
-			if (habilidades != null) {
-				String[] habilidadeSplite = habilidades.split(",");
-				for (int i = 0; i < habilidadeSplite.length; i++) {
-					pok.getHabilidade().add(habilidadeSplite[i]);
-				}
+			String[] habilidadeSplite = habilidades.split(",");
+			pok.setHabilidade(habilidadeSplite);
 
-			}
+			String fraquezas = rs.getString(10);
+			String[] fraquezaSplite = fraquezas.split(",");
+			pok.setFraqueza(fraquezaSplite);
 
 			String tipo = rs.getString(9);
-			if (tipo != null) {
-				String[] tipoSplite = habilidades.split(",");
-				for (int i = 0; i < tipoSplite.length; i++) {
-					pok.getHabilidade().add(tipoSplite[i]);
-				}
-
-			}
-
-			String fraqueza = rs.getString(10);
-			if (tipo != null) {
-				String[] fraquezaSplite = habilidades.split(",");
-				for (int i = 0; i < fraquezaSplite.length; i++) {
-					pok.getHabilidade().add(fraquezaSplite[i]);
-				}
-
-			}
+			String[] tp = tipo.split(",");
+			pok.setTipo(tp);
 
 			pok.setSexo(rs.getString(8));
 			pok.setEvoluide(rs.getString(11));
 			pokemonListaSQL.add(pok);
-			//pokemon.add(pok);
+			// pokemon.add(pok);
 			// System.out.println("-------");
-			System.out.println(pok.getNumero() + "- nome: " + pok.getNome() + "-"
-					+ pok.getHabilidade());
+			// System.out.println(pok.getNumero() + "- nome: " + pok.getNome() +
+			// "-"
+			// + pok.getHabilidade());
 
+			extractColumn(pok.getTipo(), mapTipo);
+			extractColumn(pok.getFraqueza(), mapFraqueza);
+			extractColumn(pok.getTipo(), mapTipoPokemon);
+			extractColumn(pok.getHabilidade(), mapHabilidade);
+		}
+		connection.close();
+	}
+
+	public static void Load2() throws Exception {
+		Connection c = getConnPokedexInsert();
+
+		PreparedStatement ps = c
+				.prepareStatement("INSERT INTO habilidade(nmHabilidade) values(?)");
+		Set<String> chaves = mapHabilidade.keySet();
+		for (String hab : chaves) {
+			ps.setString(1, hab);
+			ps.execute();
+		}
+	}
+
+	public static void Load() throws Exception {
+		Connection c = getConnPokedexInsert();
+
+		PreparedStatement ps = c
+				.prepareStatement("INSERT INTO TIPO(nmTipo) values(?)");
+		Set<String> chaves = mapTipo.keySet();
+		for (String tipo : chaves) {
+			ps.setString(1, tipo);
+			ps.execute();
 		}
 
-		connection.close();
+		PreparedStatement ps1 = c
+				.prepareStatement("INSERT INTO habilidade(nmTipo) values(?)");
+
+		PreparedStatement ps3 = c
+				.prepareStatement("INSERT INTO habilidade(nmFraqueza) values(?)");
+
 	}
 
 	public static void main(String[] args) {
 
-		// extractXML();
-		// extractJson();
-		
+		extractXML();
+		extractJson();
+
 		try {
-			extractPokebase(getConnPokeBase(),pokemonListaSQL);
+			extractPokebase(getConnPokeBase(), pokemonListaSQL);
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		exibeDados(pokemonListaSQL);
-		//exibeDados(pokemonListaSQL);
+
+		try {
+			Load2();
+			System.out.println("piei");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		// // exibeDados(pokemonListaXML);
+		// System.out
+		// .println("---------------------------------------tipo---------------------------------");
+		// Set<String> chaves = mapTipo.keySet();
+		// for (String string : chaves) {
+		// System.out.println(string);
+		//
+		// }
+		// System.out
+		// .println("----------------------hab------------------------------------------");
+		// Set<String> chavesH = mapHabilidade.keySet();
+		// for (String string : chavesH) {
+		// System.out.println(string);
+		//
+		// }
+		// System.out
+		// .println("------------------------cat-------------------------------------------");
+		// Set<String> chavesC = mapCategoria.keySet();
+		// for (String string : chavesC) {
+		// System.out.println(string);
+		//
+		// }
+
+		// exibeDados(pokemonListaSQL);
 
 	}
 
+	
 }
