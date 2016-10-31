@@ -16,6 +16,10 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="bin/sqljdbc4.jar"/>
+	<classpathentry exported="true" kind="lib" path="bin/sqljdbc42.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/Users/mcsantos5/Desktop/sqljdbc_6.0/ptb/auth/x64"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
