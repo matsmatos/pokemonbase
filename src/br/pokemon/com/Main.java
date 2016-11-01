@@ -42,7 +42,8 @@ public class Main {
 	public static Connection getConnPokeBase() throws Exception {
 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 		Connection conn = DriverManager
-				.getConnection("jdbc:sqlserver://localhost:1433;databaseName=pokebase;integratedSecurity=true");
+				.getConnection("jdbc:sqlserver://localhost:1433;databaseName=Pokebase;integratedSecurity=true");
+		System.out.println("POKEBASE");
 		return conn;
 
 	}
@@ -51,7 +52,7 @@ public class Main {
 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 		Connection conn = DriverManager
 				.getConnection("jdbc:sqlserver://localhost:1433;databaseName=pokedex;integratedSecurity=true");
-
+		// System.out.println("POKEDEX");
 		return conn;
 
 	}
@@ -94,7 +95,7 @@ public class Main {
 				// poke.setAltura(pokemon.getAltura().replace("m",
 				// "").replace(",", ".").trim());
 
-				poke.setPeso(pokemon.getPeso());
+				poke.setPeso(pokemon.getPeso().replace("Kg", "").replace(",", ".").trim());
 				poke.setSexo(pokemon.getSexo());
 				poke.setCategoria(pokemon.getCategoria());
 				poke.setHabilidade(pokemon.getHabilidade());
@@ -110,7 +111,9 @@ public class Main {
 
 				pokemonLista.add(poke);
 				pokemonGeral.add(poke);
+
 			}
+			System.out.println(pokemonLista.size() + "Registro da lista JSON");
 		} catch (
 
 		JsonParseException e) {
@@ -144,7 +147,7 @@ public class Main {
 				} else {
 					poke.setAltura(pokemon.getAltura().replace("m", "").replace(",", ".").trim());
 				}
-				poke.setPeso(pokemon.getPeso());
+				poke.setPeso(pokemon.getPeso().replace("Kg", "").replace(",", ".").trim());
 				poke.setSexo(pokemon.getSexo());
 				poke.setCategoria(pokemon.getCategoria());
 				poke.setHabilidade(pokemon.getHabilidade());
@@ -160,6 +163,8 @@ public class Main {
 				pokemonListaXML.add(poke);
 				pokemonGeral.add(poke);
 			}
+			System.out.println(pokemonListaXML.size() + "Registros da lista xml");
+
 		} catch (JsonProcessingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -191,7 +196,7 @@ public class Main {
 				} else {
 					poke.setAltura(csv.getAltura().replace("m", "").replace(",", ".").trim());
 				}
-				poke.setPeso(csv.getPeso());
+				poke.setPeso(csv.getPeso().replace("Kg", "").replace(",", ".").trim());
 				poke.setSexo(csv.getSexo());
 				poke.setCategoria(csv.getCategoria());
 				poke.setHabilidade(csv.getHabilidade());
@@ -209,6 +214,7 @@ public class Main {
 				pokemonGeral.add(poke);
 
 			}
+			System.out.println("registros da lista csv" + pokemonListaCSV.size());
 
 		} catch (JsonProcessingException e) {
 			// TODO Auto-generated catch block
@@ -265,7 +271,7 @@ public class Main {
 			}
 
 			pok.setCategoria(rs.getString(5));
-			pok.setPeso(rs.getString(6));
+			pok.setPeso(rs.getString(6).replace("Kg", "").replace(",", ".").trim());
 			String habilidades = rs.getString(7);
 			String[] habilidadeSplite = habilidades.split(",");
 			pok.setHabilidade(habilidadeSplite);
@@ -276,19 +282,23 @@ public class Main {
 			String[] tp = tipo.split(",");
 			pok.setTipo(tp);
 			pok.setSexo(rs.getString(8));
-			if(rs.getString(11) == null){
+			if (rs.getString(11) == null) {
 				pok.setEvoluide(null);
-			}else{
+			} else {
 				pok.setEvoluide(rs.getString(11).replace(".0", ""));
 			}
 			pokemonListaSQL.add(pok);
 			pokemonGeral.add(pok);
 
+			extractColumn(pok.getCategoria(), mapCategoria);
 			extractColumn(pok.getTipo(), mapTipo);
 			extractColumn(pok.getFraqueza(), mapFraqueza);
 			extractColumn(pok.getTipo(), mapTipoPokemon);
 			extractColumn(pok.getHabilidade(), mapHabilidade);
+
 		}
+		System.out.println(pokemonListaSQL.size() + "Registros da lista");
+
 		connection.close();
 	}
 
@@ -298,8 +308,9 @@ public class Main {
 		String sql = "if not exists (select nmCategoria from Categoria where nmCategoria= ?) INSERT INTO Categoria(nmCategoria) values(?)";
 		PreparedStatement ps;
 		Set<String> chaves = mapCategoria.keySet();
+		ps = c.prepareStatement(sql);
 		for (String cat : chaves) {
-			ps = c.prepareStatement(sql);
+
 			ps.setString(1, cat);
 			ps.setString(2, cat);
 			ps.execute();
@@ -314,8 +325,9 @@ public class Main {
 		PreparedStatement ps;
 		Set<String> chaves = mapHabilidade.keySet();
 		String sql = "if not exists (select nmHabilidade from habilidade where nmHabilidade= ?) INSERT INTO habilidade(nmHabilidade) values(?)";
+		ps = c.prepareStatement(sql);
 		for (String hab : chaves) {
-			ps = c.prepareStatement(sql);
+
 			ps.setString(1, hab);
 			ps.setString(2, hab);
 			ps.execute();
@@ -329,8 +341,9 @@ public class Main {
 		String sql = "if not exists (select nmTipo from TIPO where nmTipo= ?) INSERT INTO TIPO(nmTipo) values(?)";
 		PreparedStatement ps;
 		Set<String> chaves = mapTipo.keySet();
+		ps = c.prepareStatement(sql);
 		for (String tipo : chaves) {
-			ps = c.prepareStatement(sql);
+
 			ps.setString(1, tipo);
 			ps.setString(2, tipo);
 			ps.execute();
@@ -343,9 +356,10 @@ public class Main {
 		Connection c = getConnPokedexInsert();
 		String sql = "if not exists (select tipoSexo from SEXO where tipoSexo= ?) INSERT INTO SEXO(tipoSexo) values(?)";
 		PreparedStatement ps;
+		ps = c.prepareStatement(sql);
 		Set<String> chaves = mapSexo.keySet();
 		for (String sexo : chaves) {
-			ps = c.prepareStatement(sql);
+
 			ps.setString(1, sexo);
 			ps.setString(2, sexo);
 			ps.execute();
@@ -366,52 +380,83 @@ public class Main {
 		if (rs.next()) {
 			ret = rs.getInt("sexo");
 		}
+		c.close();
 		return ret;
 	}
 
-	public static int getCategoria(String parm) throws Exception {
-		Connection c = getConnPokedexInsert();
-		String sql = "SELECT codCategoria from CATEGORIA WHERE nmCategoria = ?";
-		PreparedStatement ps;
-		ps = c.prepareStatement(sql);
-		ps.setString(1, parm);
-		ResultSet rs = ps.executeQuery();
-		int ret = 0;
-		if (rs.next()) {
-			ret = rs.getInt("codCategoria");
+	public static int getCategoria(String parm) {
+		try {
+			Connection c = getConnPokedexInsert();
+			String sql = "SELECT codCategoria from CATEGORIA WHERE nmCategoria = ?";
+			PreparedStatement ps;
+			ps = c.prepareStatement(sql);
+			ps.setString(1, parm);
+			ResultSet rs = ps.executeQuery();
+			int ret = 0;
+			if (rs.next()) {
+				ret = rs.getInt("codCategoria");
+			}
+			c.close();
+			return ret;
+
+		} catch (Exception ex) {
+			System.out.println(ex);
+
+			return 0;
 		}
-		return ret;
 	}
 
-	public static void loadPokemon() throws Exception {
-		 
-		Connection c = getConnPokedexInsert();
-		String sql = "if not exists (select codPokemon from Pokemon where codPokemon= ?) "
-				+ "INSERT INTO Pokemon(codPokemon,nome,descricao,altura,peso,sexo,codCategoria,evoluiDe) values(?,?,?,?,?,?,?,?)";
-		PreparedStatement ps;
-		//Set<String> chaves = mapSexo.keySet();
-	
-			for (Pokemon poke : pokemonGeral) {
-				ps = c.prepareStatement(sql);
-				ps.setInt(1,Integer.parseInt(poke.getNumero().replace(".0", "")));
-				ps.setInt(2, Integer.parseInt(poke.getNumero().replace(".0", "")));
-				ps.setString(3, poke.getNome());
-				ps.setString(4, poke.getDescricao());
-				ps.setDouble(5, Double.parseDouble(poke.getAltura()));
-				ps.setDouble(6,Double.parseDouble(poke.getPeso().replace("Kg", "").replace(",", ".").trim()));
-				ps.setInt(7, getSexo(poke.getSexo()));
-				ps.setInt(8, getCategoria(poke.getCategoria()));
-//				ps.setInt(9,Integer.parseInt(poke.getEvoluide().replace(".0", "")));
-				ps.setInt(9,0);
+	public static void preencheEvoluiDe() {
+		try {
+			Connection c = getConnPokedexInsert();
+			String sql = " UPDATE Pokemon SET evoluide = (Select top 1 codpokemon from pokemon where nome =?) where codpokemon = ?";
+			PreparedStatement ps;
+			ps = c.prepareStatement(sql);
+			for (Pokemon pokemon : pokemonGeral) {
+
+				ps.setInt(2, Integer.parseInt(pokemon.getNumero().replace(".0", "")));
+				ps.setString(1, pokemon.getEvoluide());
 
 				ps.execute();
 
 			}
 			c.close();
-			System.out.println("Sexo OK");
-		
-		 
-		
+			System.out.println("EvoluiDe Alterado !!!");
+
+		} catch (Exception ex) {
+			System.out.println(ex);
+		}
+
+	}
+
+	public static void loadPokemon() throws Exception {
+
+		Connection c = getConnPokedexInsert();
+		String sql = "if not exists (select codPokemon from Pokemon where codPokemon= ?) "
+				+ "INSERT INTO Pokemon(codPokemon,nome,descricao,altura,peso,sexo,codCategoria) values(?,?,?,?,?,?,?)";
+		PreparedStatement ps;
+		// Set<String> chaves = mapSexo.keySet();
+		int cont = 0;
+		ps = c.prepareStatement(sql);
+
+		for (int i = 0; i < pokemonGeral.size(); i++) {
+			ps.setInt(1, Integer.parseInt(pokemonGeral.get(i).getNumero().replace(".0", "")));
+			ps.setInt(2, Integer.parseInt(pokemonGeral.get(i).getNumero().replace(".0", "")));
+			ps.setString(3, pokemonGeral.get(i).getNome().trim());
+			ps.setString(4, pokemonGeral.get(i).getDescricao());
+			ps.setDouble(5, Double.parseDouble(pokemonGeral.get(i).getAltura()));
+			ps.setDouble(6, Double.parseDouble(
+					pokemonGeral.get(i).getPeso().replace("Kg", "").replace(",", ".").replace("kg", "").trim()));
+			ps.setInt(7, getSexo(pokemonGeral.get(i).getSexo()));
+			ps.setInt(8, getCategoria(pokemonGeral.get(i).getCategoria()));
+			ps.execute();
+			cont++;
+
+		}
+
+		c.close();
+		System.out.println("Pokemon OK, " + cont + " inseridos");
+
 	}
 
 	public static void main(String[] args) throws Exception {
@@ -429,11 +474,13 @@ public class Main {
 		loadCat();
 
 		loadPokemon();
+		preencheEvoluiDe();
+//		for (Pokemon string : pokemonGeral) {
+//			System.out.println(string.getNome() + " " + string.getNumero() + "-" + string.getEvoluide());
+//		}
 
-//		 for (Pokemon string : pokemonGeral) {
-//		 System.out.println(string.getAltura() + " " + string.getNumero() );
-//		 }
-//		
+		System.out.println(pokemonGeral.size());
+
 	}
 
 }
