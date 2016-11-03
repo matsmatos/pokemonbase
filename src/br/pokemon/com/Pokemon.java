@@ -16,10 +16,7 @@ public class Pokemon {
 	String codtipo;
 	String[] fraqueza;
 	String[] tipo;
-	ArrayList<String> arrayTipo = new ArrayList<>();
-	ArrayList<String> arrayFraqueza = new ArrayList<>();
-	ArrayList<String> arrayHab = new ArrayList<>();
- 
+
 	
 	public String getCodhabilidade() {
 		return codhabilidade;
@@ -33,27 +30,7 @@ public class Pokemon {
 	public void setCodtipo(String codtipo) {
 		this.codtipo = codtipo;
 	}
-	public ArrayList<String> getArrayTipo() {
-		return arrayTipo;
-	}
-	public void setArrayTipo(ArrayList<String> arrayTipo) {
-		this.arrayTipo = arrayTipo;
-	}
-	public ArrayList<String> getArrayFraqueza() {
-		return arrayFraqueza;
-	}
-	public void setArrayFraqueza(ArrayList<String> arrayFraqueza) {
-		this.arrayFraqueza = arrayFraqueza;
-	}
-	public ArrayList<String> getArrayHab() {
-		return arrayHab;
-	}
-	public void setArrayHab(ArrayList<String> arrayHab) {
-		this.arrayHab = arrayHab;
-	}
-
-	
-	
+ 	
 	public String getNumero() {
 		return numero;
 	}
